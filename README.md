@@ -1,6 +1,5 @@
-# MyNewProject
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+# angular-demo
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7. This angular project is just the frontend of the demo project which consumes REST API's methods. Please download https://github.com/orjan27/springboot-rest-demo for the backend.
 
 ## Development server
 
