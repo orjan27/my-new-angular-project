@@ -1,0 +1,127 @@
+<h2>Employee Details</h2> 
+
+<hr/>
+
+<div *ngIf="employee" style="width: 100%;">
+  
+  <div class="row">  
+    <div class="col-sm-5">
+      <div class="form-group">
+        <label><strong>First Name:</strong></label>
+        {{employee.firstName}}
+      </div>
+
+      <div class="form-group">
+        <label for="lastName"><strong>Last Name:</strong></label>
+        {{employee.lastName}}
+      </div>
+
+      <div class="form-group">
+        <label for="middleName"><strong>Middle Name:</strong></label>
+        {{employee.middleName}}
+      </div>
+
+      <div class="form-group">
+        <label class="center-block"><strong>Birth Date:</strong></label>
+        {{employee.birthDate}}
+        
+      </div>
+
+      <div class="form-group">
+        <label for="gender"><strong>Gender:</strong></label>
+        {{employee.gender}}
+      </div>
+
+      <div class="form-group">
+        <label for="maritalStatus"><strong>Marital Status:</strong></label>
+       {{employee.maritalStatus}}
+      </div>
+
+      <div class="form-group">
+        <label for="position"><strong>Position:</strong></label>
+        {{employee.position}}
+      </div>
+
+    <div class="form-group">
+      <label class="center-block"><strong>Date Hired:</strong>
+      </label>
+      {{employee.dateHired}}
+    </div>
+    </div>
+  </div>
+  <!-- End row-->
+
+
+
+  <div class="row">  
+    <div class="col-sm-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <strong>Contact info </strong>
+        </div>
+        <div class="panel-body">
+          <table class="table ">
+            <thead>
+              <tr>
+                <th>Value</th>
+                <th>Primary?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let contactInfo of employee.contactInfos; let i = index;" >
+                <td>
+                  {{contactInfo.val}}
+                </td>
+                <td>
+                  {{contactInfo.primry}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div> 
+    </div>
+  </div>  
+
+  <div class="row">  
+    <div class="col-sm-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <strong>Address Info </strong>
+        </div>
+        <div class="panel-body">
+          <table class="table ">
+            <thead>
+              <tr>
+                <th>Address 1</th>
+                <th>Address 2</th>
+                <th>Primary?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let addressInfo of employee.addressInfos; let i = index;" >
+                <td>
+                  {{addressInfo.address1}}
+                </td>
+                <td>
+                  {{addressInfo.address2}}
+                </td>
+                <td>
+                  {{addressInfo.primry}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div> 
+    </div>
+  </div>  
+
+
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Employee List</button><br>
+
+

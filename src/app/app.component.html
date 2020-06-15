@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark" *ngIf="currentUser">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item" >
+      <a class="nav-link text-black" >Hi {{currentUser.firstName}}</a>
+    </li>
+    
+    <li class="nav-item">
+      <a routerLink="" class="nav-link text-white" >Home</a>
+    </li>
+    
+    <li class="nav-item">
+        <a routerLink="employees" class="nav-link text-white" >Employee List</a>
+    </li>
+
+    <li class="nav-item">
+      <a routerLink="add" *ngIf="currentUser.role === 'admin'" class="nav-link text-white" >Add Employee</a>
+    </li>
+
+    <li class="nav-item">
+      <a routerLink="" class="nav-link text-white" (click)="logout()" >Logout</a>
+    </li>
+    
+
+    
+
+  </ul>
+</nav>
+
+
+<div class="container">
+  <br>
+  <h2 style="text-align: center;">{{title}}</h2>
+  <hr>  
+  <div class="card">
+    <div class="card-body">
+  <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
